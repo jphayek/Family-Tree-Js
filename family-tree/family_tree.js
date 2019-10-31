@@ -114,3 +114,18 @@ function find_and_give_ascendance(family_as_tree, search) {
 var asc = find_and_give_ascendance(jp, 'Barnabé');
 console.log(asc);
 //[{"name": "Barnabé"},{"name": "Julien"},{"name": "Pascal"}, {"name": "Jack"}]
+
+//Exercice2: Compter le nombre de femmes
+//Exercice3: Ameliorer la classe Tree pour y mettre une fonction "add" qui ajoute un enfant a une personne
+//Exercice3 bis: Traduire le tableau "family_as_array" en "family_as_tree".
+//Exercice4: Renvoyer l'arbre de toutes les descendant d'une personne.
+
+function count_sex(family, sex) {
+	var c = 0;
+	family.traverse(function(p, acc) {
+		c += p.sex == sex;
+	});
+	return c;
+}
+
+console.log('Le nmbre de femmes', count_sex(jp, 'f'));
