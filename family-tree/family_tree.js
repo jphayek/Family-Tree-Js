@@ -94,7 +94,7 @@ function Tree(rootNode) {
 	};
 }
 
-var zamor = new Tree(family_as_tree);
+var jp = new Tree(family_as_tree);
 
 function find_and_give_ascendance(family_as_tree, search) {
 	var result = [];
@@ -111,6 +111,6 @@ function find_and_give_ascendance(family_as_tree, search) {
 	});
 }
 
-var asc = find_and_give_ascendance(zamor, 'Barnabé');
+var asc = find_and_give_ascendance(jp, 'Barnabé');
 console.log(asc);
 //[{"name": "Barnabé"},{"name": "Julien"},{"name": "Pascal"}, {"name": "Jack"}]
