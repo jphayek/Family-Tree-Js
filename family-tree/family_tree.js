@@ -71,6 +71,17 @@ var family_as_tree = {
 	]
 };
 
-function find_and_give_ascendance(family_tree, person) {
-	// TODO
+function Tree(rootNode) {
+	this._root = rootNode;
+
+	Tree.prototype.traverse = function(callback) {
+		(function recursive(currentNode, accu) {
+			for (var i = 0; i < currentNode.children.length; i++) {
+				recursive(currentNode.children[i], [ currentNode ].concat(accu));
+			}
+			callback(currentNode, accu);
+		})(this._root, []);
+	};
 }
+
+var zamor = new Tree(family_as_tree);
